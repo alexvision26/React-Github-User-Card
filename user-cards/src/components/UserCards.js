@@ -5,7 +5,6 @@ import Card from './Card';
 const UserCard = props => {
 
     // console.log(props.myCard)
-    console.log(props.followers)
 
     return(
     <div className='card-container'>

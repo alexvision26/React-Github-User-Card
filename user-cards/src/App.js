@@ -7,7 +7,7 @@ import UserCards from './components/UserCards';
 class App extends React.Component {
   state = {
     myCard: [],
-    followers: []
+    followers: [],
   }
 
   componentDidMount() {
@@ -22,8 +22,13 @@ class App extends React.Component {
 
       axios.get('https://api.github.com/users/alexvision26/followers').then(res => {
         // console.log(res.data)
-        this.setState({
-          followers: res.data
+        res.data.forEach(item => {
+          axios.get(`https://api.github.com/users/${item.login}`).then(response => {
+            // console.log(response.data)
+            this.setState({
+              followers: [...this.state.followers, response.data]
+            })
+          })
         })
       })
   }

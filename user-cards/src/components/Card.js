@@ -8,10 +8,10 @@ const Card = props => {
         <div className='card'>
             <img src={props.profile.avatar_url} width='150px' height='150px' alt={`${props.profile.name}'s avatar`}/>
             <div className='card-info'>
-                <p>Username: {props.profile.login}</p>
-                <p>Name: {props.profile.name}</p>
-                <p>Followers: {props.profile.followers}</p>
-                <p>Following: {props.profile.following}</p>
+                <p><strong>Username:</strong> {props.profile.login}</p>
+                <p><strong>Name:</strong> {props.profile.name}</p>
+                <p><strong>Followers:</strong> {props.profile.followers}</p>
+                <p><strong>Following:</strong> {props.profile.following}</p>
             </div>
         </div>
     )
