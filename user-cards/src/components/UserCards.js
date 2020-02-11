@@ -2,20 +2,22 @@ import React from 'react';
 
 import Card from './Card';
 
-class UserCard extends React.Component {
-    constructor() {
-        super();
+const UserCard = props => {
 
-    }
+    // console.log(props.myCard)
+    console.log(props.followers)
 
-    render() {
-        return(
-        <div>
-            <p>I am Card Container</p>
-            <Card/>
-        </div>
-        )
-    }
+    return(
+    <div className='card-container'>
+        <Card profile={props.myCard}/>
+
+        {props.followers.map(item => {
+            return (
+                <Card profile={item} />
+            )
+        })}
+    </div>
+    )
 }
 
 export default UserCard;
